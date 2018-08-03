@@ -3,7 +3,11 @@
 	
 <swipe class="my-swipe">
   <swipe-item class="slide1" v-for="datalist in loopList">
-  	<img :src="datalist.img" alt=""></swipe-item>
+  	<ul>
+  	<li><img class="swipe" :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""></li>	
+  	
+	</ul>
+  </swipe-item>
 
 </swipe>
 
@@ -68,6 +72,8 @@ export default {
 </script>
 
 <style scoped>
+.my-swipe{padding-top: 5px}
+.swipe{margin-left: 3px}
 .my-swipe {
   height:115px;
   color: #fff;
