@@ -6,11 +6,30 @@ import personal from '../components/personal'
 import nowplaying from '../components/nowplaying'
 import comingsoon from '../components/comingsoon'
 import detail from '../components/detail'
+import meituan from '../components/meituan'
+import cellphone from '../components/cellphone'
+
+
+ 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-   {
+     {
+      path: '/personal',
+      component: personal,
+      children:[
+      {
+        path:"meituan",
+      component:meituan
+
+      },
+      {
+        path:"cellphone",
+        component:cellphone
+      }]
+    },
+    {
       path: '/cinema',
       component: cinema
     },
@@ -28,12 +47,9 @@ export default new Router({
       	component:comingsoon
       }]
     },
+   
     {
-      path: '/personal',
-      component: personal
-    },
-    {
-      path: '/detail',
+      path: '/detail/:Tibbersid',
       component: detail
     },
     {
