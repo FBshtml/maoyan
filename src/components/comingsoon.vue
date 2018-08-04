@@ -2,9 +2,9 @@
   <div> 
 	
 <swipe class="my-swipe">
-  <swipe-item class="slide1" v-for="datalist in loopList">
+  <swipe-item class="slide1" v-for="datalist ,index in loopList" :key="datalist.id">
   	<ul>
-  	<li><img class="swipe" :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""></li>	
+  	<li><img class="swipe"  :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""><img :src="datalist.img" alt=""></li>	
   	
 	</ul>
   </swipe-item>
@@ -62,7 +62,7 @@ export default {
 
 	axios.get('/ajax/mostExpected?ci=65&limit=10&offset=0&token=').then(res=>{
   	this.loopList=res.data.coming;
-  	console.log(res.data.coming);
+  //	console.log(res.data.coming);
   	for(var i =0;i<this.loopList.length;i++){
 		this.loopList[i].img=this.loopList[i].img.slice(0,22)+ "170.230" + this.loopList[i].img.slice(25)}
 	 })			

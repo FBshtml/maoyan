@@ -36,7 +36,7 @@ export default {
   mounted(){
   	axios.get('/ajax/movieOnInfoList?token=').then(res=>{
   	this.filmList=res.data.movieList;
-  	console.log(res.data.movieList);
+  //	console.log(res.data.movieList);
 
   	for(var i =0;i<this.filmList.length;i++){
 		this.filmList[i].img=this.filmList[i].img.slice(0,22)+ "170.230" + this.filmList[i].img.slice(25)
